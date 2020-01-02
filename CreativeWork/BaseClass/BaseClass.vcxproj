@@ -70,10 +70,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>E:\work\HAL\4th grade\CW4S\CreativeWork\BaseClass;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)BaseClass;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>E:\work\HAL\4th grade\CW4S\CreativeWork\BaseClass;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)BaseClass;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

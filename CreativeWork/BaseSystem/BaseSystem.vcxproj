@@ -70,13 +70,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>E:\work\HAL\4th grade\CW4S\CreativeWork\BaseClass;E:\work\HAL\4th grade\CW4S\CreativeWork\BaseSystem\BaseSystem\Frame;E:\work\HAL\4th grade\CW4S\CreativeWork\CWindow\Window;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\work\HAL\4th grade\CW4S\CreativeWork\CWindow\Bin\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)BaseClass;$(SolutionDir)BaseSystem\BaseSystem\Frame;$(SolutionDir)CWindow\Window;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)CWindow\Bin\Debug;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)BaseSystem\Bin\Debug\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>E:\work\HAL\4th grade\CW4S\CreativeWork\BaseClass;E:\work\HAL\4th grade\CW4S\CreativeWork\BaseSystem\BaseSystem\Frame;E:\work\HAL\4th grade\CW4S\CreativeWork\CWindow\Window;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\work\HAL\4th grade\CW4S\CreativeWork\CWindow\Bin\Release;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)BaseClass;$(SolutionDir)BaseSystem\BaseSystem\Frame;$(SolutionDir)CWindow\Window;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)CWindow\Bin\Release;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)BaseSystem\Bin\Release\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

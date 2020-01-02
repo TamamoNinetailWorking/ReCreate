@@ -70,13 +70,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>E:\work\HAL\4th grade\CW4S\CreativeWork\BaseClass;E:\work\HAL\4th grade\CW4S\CreativeWork\DirectX11;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\work\HAL\4th grade\CW4S\CreativeWork\DirectX11\DirectXTex\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)BaseClass;$(SolutionDir)DirectX11;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)DirectX11\DirectXTex\Debug;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)DirectX11\Bin\Debug\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>E:\work\HAL\4th grade\CW4S\CreativeWork\BaseClass;E:\work\HAL\4th grade\CW4S\CreativeWork\DirectX11;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\work\HAL\4th grade\CW4S\CreativeWork\DirectX11\DirectXTex\Release;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)BaseClass;$(SolutionDir)DirectX11;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)DirectX11\DirectXTex\Release;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)DirectX11\Bin\Release\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -124,6 +124,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DirectX11\PrimaryDevice\DirectX11.h" />
     <ClInclude Include="DirectXTex\DirectXTex.h" />
     <ClInclude Include="DirectXTex\WICTextureLoader.h" />
     <ClInclude Include="IMGUI\imconfig.h" />
@@ -139,6 +140,7 @@
     <None Include="DirectXTex\DirectXTex.inl" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DirectX11\PrimaryDevice\DirectX11Main.cpp" />
     <ClCompile Include="DirectXTex\WICTextureLoader.cpp" />
     <ClCompile Include="IMGUI\imgui.cpp" />
     <ClCompile Include="IMGUI\imgui_demo.cpp" />

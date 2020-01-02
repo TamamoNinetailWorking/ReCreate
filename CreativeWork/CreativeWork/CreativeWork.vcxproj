@@ -70,12 +70,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>E:\work\HAL\4th grade\CW4S\CreativeWork\BaseClass;E:\work\HAL\4th grade\CW4S\CreativeWork\CWindow\Window;E:\work\HAL\4th grade\CW4S\CreativeWork\BaseSystem;E:\work\HAL\4th grade\CW4S\CreativeWork\DirectX11;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\work\HAL\4th grade\CW4S\CreativeWork\BaseSystem\Bin\Debug;E:\work\HAL\4th grade\CW4S\CreativeWork\CWindow\Bin\Debug;E:\work\HAL\4th grade\CW4S\CreativeWork\DirectX11\Bin\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)BaseClass;$(SolutionDir)CWindow\Window;$(SolutionDir)BaseSystem;$(SolutionDir)DirectX11;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)BaseSystem\Bin\Debug;$(SolutionDir)CWindow\Bin\Debug;$(SolutionDir)DirectX11\Bin\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>E:\work\HAL\4th grade\CW4S\CreativeWork\BaseClass;E:\work\HAL\4th grade\CW4S\CreativeWork\CWindow\Window;E:\work\HAL\4th grade\CW4S\CreativeWork\BaseSystem;E:\work\HAL\4th grade\CW4S\CreativeWork\DirectX11;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\work\HAL\4th grade\CW4S\CreativeWork\CWindow\Bin\Release;E:\work\HAL\4th grade\CW4S\CreativeWork\BaseSystem\Bin\Release;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)BaseClass;$(SolutionDir)CWindow\Window;$(SolutionDir)BaseSystem;$SolutionDir)DirectX11;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)CWindow\Bin\Release;$(SolutionDir)BaseSystem\Bin\Release;$(SolutionDir)DirectX11\Bin\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

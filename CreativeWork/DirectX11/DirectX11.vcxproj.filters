@@ -11,6 +11,12 @@
     <Filter Include="IMGUI">
       <UniqueIdentifier>{e0eb5e56-5c89-48d1-926e-ee6ad34086d7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DirectX11">
+      <UniqueIdentifier>{b5d1ba36-3c9d-445b-abd0-41a44908324a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX11\PrimaryDevice">
+      <UniqueIdentifier>{02cb65be-db88-425e-a862-70a9047316ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectXTex\DirectXTex.h">
@@ -43,6 +49,9 @@
     <ClInclude Include="IMGUI\imstb_truetype.h">
       <Filter>IMGUI</Filter>
     </ClInclude>
+    <ClInclude Include="DirectX11\PrimaryDevice\DirectX11.h">
+      <Filter>DirectX11\PrimaryDevice</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectXTex\DirectXTex.inl">
@@ -70,6 +79,9 @@
     </ClCompile>
     <ClCompile Include="IMGUI\imgui_widgets.cpp">
       <Filter>IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectX11\PrimaryDevice\DirectX11Main.cpp">
+      <Filter>DirectX11\PrimaryDevice</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

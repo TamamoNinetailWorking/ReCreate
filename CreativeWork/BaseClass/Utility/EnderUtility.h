@@ -42,7 +42,8 @@ void DeleteListElem(std::list<T*>& arr, T* elem)
 	{
 		if ((*itr) == elem)
 		{
-			it = arr.erase(it);
+			Delete(*itr);
+			itr = arr.erase(itr);
 		}
 		else
 		{
