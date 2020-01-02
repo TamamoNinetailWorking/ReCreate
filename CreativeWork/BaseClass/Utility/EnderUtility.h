@@ -22,6 +22,16 @@ inline void Release(T*& p)
 }
 
 template <class T>
+inline void Exit(T*& p)
+{
+	if (p)
+	{
+		p->Exit();
+	}
+	p = nullptr;
+}
+
+template <class T>
 inline void DeleteArray(T*& p)
 {
 	if (p)
