@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="BaseSystem">
+      <UniqueIdentifier>{3a5b16e8-b3bf-4d58-8fdb-b6e9420be3ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseSystem\Frame">
+      <UniqueIdentifier>{159144b5-fa52-41e9-962f-f117b8932deb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{10351e21-0209-42fc-bdb0-b093cd481150}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseSystem\Directory">
+      <UniqueIdentifier>{629ad070-9178-448c-b446-f7f1179a80a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseSystem\FramePerSec">
+      <UniqueIdentifier>{6ca3ff21-408e-49aa-ad94-9b5c75126861}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseSystem\Frame\BaseSystem.cpp">
+      <Filter>BaseSystem\Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseSystem\Frame\SystemLoop.cpp">
+      <Filter>BaseSystem\Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseSystem\Directory\DirectoryManager.cpp">
+      <Filter>BaseSystem\Directory</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseSystem\FramePerSec\FramePerSec.cpp">
+      <Filter>BaseSystem\FramePerSec</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseSystem\Frame\BaseSystem.h">
+      <Filter>BaseSystem\Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\MathUtility.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseSystem\Directory\DirectoryManager.h">
+      <Filter>BaseSystem\Directory</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseSystem\FramePerSec\FramePerSec.h">
+      <Filter>BaseSystem\FramePerSec</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

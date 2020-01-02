@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="CWindow">
+      <UniqueIdentifier>{617d21e0-c269-4824-8510-c53054bccdc9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Window\ConsoleWindow.cpp">
+      <Filter>CWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\CWindow.cpp">
+      <Filter>CWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Loop.cpp">
+      <Filter>CWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\WndProc.cpp">
+      <Filter>CWindow</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Window\CWindow.h">
+      <Filter>CWindow</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
