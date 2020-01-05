@@ -8,6 +8,7 @@
 class CDepthStencilState : public CSingleton<CDepthStencilState>
 {
 	friend class CSingleton<CDepthStencilState>;
+	
 
 private:
 
@@ -24,6 +25,24 @@ private:
 
 public:
 
+	enum State
+	{
+		Default,
+		None,
 
+		Max,
+	};
+
+	virtual ~CDepthStencilState() {}
+
+	bool Init(ID3D11Device*& device,ID3D11DeviceContext*& immediateContext);
+	void Exit();
+
+	void SetStencilState(State state);
 
 };
+
+inline CDepthStencilState& DepthStencilState()
+{
+	return CDepthStencilState::GetInstance();
+}
