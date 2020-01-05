@@ -17,6 +17,9 @@
     <Filter Include="DirectX11\PrimaryDevice">
       <UniqueIdentifier>{02cb65be-db88-425e-a862-70a9047316ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DirectX11\RenderTarget">
+      <UniqueIdentifier>{a4d08804-bce8-4e8e-83bc-992a221559e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectXTex\DirectXTex.h">
@@ -52,6 +55,9 @@
     <ClInclude Include="DirectX11\PrimaryDevice\DirectX11.h">
       <Filter>DirectX11\PrimaryDevice</Filter>
     </ClInclude>
+    <ClInclude Include="DirectX11\RenderTarget\RenderTargeth.h">
+      <Filter>DirectX11\RenderTarget</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectXTex\DirectXTex.inl">
@@ -82,6 +88,9 @@
     </ClCompile>
     <ClCompile Include="DirectX11\PrimaryDevice\DirectX11Main.cpp">
       <Filter>DirectX11\PrimaryDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectX11\RenderTarget\RenderTarget.cpp">
+      <Filter>DirectX11\RenderTarget</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

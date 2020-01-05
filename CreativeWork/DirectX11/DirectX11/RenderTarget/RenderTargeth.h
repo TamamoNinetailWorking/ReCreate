@@ -18,6 +18,7 @@ private:
 	/* Size */
 	UINT m_nWidth;
 	UINT m_nHeight;
+	UINT m_nArraySize;
 
 	/* RenderTarget View */
 	ID3D11Texture2D* m_pTex;
@@ -26,6 +27,7 @@ private:
 
 	bool general_render_target();
 	bool main_render_target();
+	bool cube_render_target();
 
 
 public:
@@ -48,5 +50,9 @@ public:
 		UINT height = 1024,
 		UINT size = 6
 	);
+
+	ID3D11Texture2D*& GetTexture();
+	ID3D11ShaderResourceView*& GetShaderResourceView();
+	ID3D11RenderTargetView*& GetRenderTargetView();
 
 };

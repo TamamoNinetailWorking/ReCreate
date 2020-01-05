@@ -125,6 +125,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="DirectX11\PrimaryDevice\DirectX11.h" />
+    <ClInclude Include="DirectX11\RenderTarget\RenderTargeth.h" />
     <ClInclude Include="DirectXTex\DirectXTex.h" />
     <ClInclude Include="DirectXTex\WICTextureLoader.h" />
     <ClInclude Include="IMGUI\imconfig.h" />
@@ -141,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DirectX11\PrimaryDevice\DirectX11Main.cpp" />
+    <ClCompile Include="DirectX11\RenderTarget\RenderTarget.cpp" />
     <ClCompile Include="DirectXTex\WICTextureLoader.cpp" />
     <ClCompile Include="IMGUI\imgui.cpp" />
     <ClCompile Include="IMGUI\imgui_demo.cpp" />
