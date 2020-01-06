@@ -126,7 +126,10 @@
   <ItemGroup>
     <ClInclude Include="DirectX11\DepthStencil\DepthStencil.h" />
     <ClInclude Include="DirectX11\PrimaryDevice\DirectX11.h" />
+    <ClInclude Include="DirectX11\RenderingState\AlphaBlendState\AlphaBlendState.h" />
     <ClInclude Include="DirectX11\RenderingState\DepthStencilState\DepthStencilState.h" />
+    <ClInclude Include="DirectX11\RenderingState\RasterizeState\RasterizeState.h" />
+    <ClInclude Include="DirectX11\RenderingState\ViewportSetting\ViewportSetting.h" />
     <ClInclude Include="DirectX11\RenderTarget\RenderTargeth.h" />
     <ClInclude Include="DirectXTex\DirectXTex.h" />
     <ClInclude Include="DirectXTex\WICTextureLoader.h" />
@@ -145,7 +148,10 @@
   <ItemGroup>
     <ClCompile Include="DirectX11\DepthStencil\DepthStencil.cpp" />
     <ClCompile Include="DirectX11\PrimaryDevice\DirectX11Main.cpp" />
+    <ClCompile Include="DirectX11\RenderingState\AlphaBlendState\AlphaBlendState.cpp" />
     <ClCompile Include="DirectX11\RenderingState\DepthStencilState\DepthStencilState.cpp" />
+    <ClCompile Include="DirectX11\RenderingState\RasterizeState\RasterizeState.cpp" />
+    <ClCompile Include="DirectX11\RenderingState\ViewportSetting\ViewportSetting.cpp" />
     <ClCompile Include="DirectX11\RenderTarget\RenderTarget.cpp" />
     <ClCompile Include="DirectXTex\WICTextureLoader.cpp" />
     <ClCompile Include="IMGUI\imgui.cpp" />

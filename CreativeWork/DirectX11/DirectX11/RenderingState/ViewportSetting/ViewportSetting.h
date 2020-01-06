@@ -17,15 +17,6 @@ private:
 	/* Viewport */
 	std::vector<D3D11_VIEWPORT> m_pViewPortSetting;
 
-	///* Parameter */
-	//UINT m_nViewportNum;
-	//FLOAT m_fWidth;
-	//FLOAT m_fHeight;
-	//FLOAT m_fMinDepth;
-	//FLOAT m_fMaxDepth;
-	//FLOAT m_fTopLeftX;
-	//FLOAT m_fTopLeftY;
-
 public:
 
 	virtual ~CViewportSetting() {};
