@@ -87,3 +87,8 @@ public:
 		LPCSTR filename,
 		ID3D11ShaderResourceView*& pSRV);
 };
+
+inline CShaderCast& ShaderCast()
+{
+	return CShaderCast::GetInstance();
+}
