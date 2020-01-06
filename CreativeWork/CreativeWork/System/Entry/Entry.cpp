@@ -4,7 +4,9 @@
 #include <BaseSystem/Frame/BaseSystem.h>
 #include <BaseSystem/FramePerSec/FramePerSec.h>
 #include <CWindow.h>
-#include <DirectX11/PrimaryDevice/DirectX11.h>
+#include <DirectX11/SystemWrapper/SystemWrapper.h>
+
+#include <d3d11.h>
 
 
 #pragma comment(lib,"BaseSystem.lib")
@@ -40,21 +42,18 @@ bool PrimaryInit()
 		"Sampler"
 	);
 
-
-	/* DirectX11 Primary Device Init */
-	sts = PrimaryDevice().Init(
+	/* System Wrapper Init */
+	sts = GraphicsSystem().Init(
 		GetSystem().GetWindow()->GetHWND(),
-		false,
 		GetSystem().GetWindow()->GetWindowWidth(),
-		GetSystem().GetWindow()->GetWindowHeight()
-	);
-
+		GetSystem().GetWindow()->GetWindowHeight(),
+		false);
 	if (!sts)
 	{
 		return false;
 	}
 
-	std::cout << " Primary Device is Create Success !!" << std::endl;
+	std::cout << "Create Successfull GraphicsSystem!!" << std::endl;
 
 	return true;
 }
@@ -62,7 +61,7 @@ bool PrimaryInit()
 //Primary Exit
 void PrimaryExit()
 {
-	PrimaryDevice().Exit();
+	GraphicsSystem().Exit();
 
 	GetFPSManager().Exit();
 }

@@ -35,7 +35,16 @@ public:
 	void Exit();
 
 	void SetDefaultRenderTarget();
-	void SetRenderTarget(ID3D11RenderTargetView*& rtv, ID3D11DepthStencilView*& dsv);
+	void SetRenderTarget(
+		ID3D11RenderTargetView*& rtv, 
+		ID3D11DepthStencilView*& dsv);
+
+	void ClearRenderTarget(ID3D11RenderTargetView*& render_target,const FLOAT* color);
+	void ClearDepthStencil(ID3D11DepthStencilView*& depth_stencil);
+
+	void ClearForColor(FLOAT r, FLOAT g, FLOAT b);
+	void ClearBuffer();
+	void Present();
 
 };
 

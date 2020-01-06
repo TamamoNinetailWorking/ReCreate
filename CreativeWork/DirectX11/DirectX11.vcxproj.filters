@@ -38,6 +38,12 @@
     <Filter Include="DirectX11\RenderingState\ViewPortSetting">
       <UniqueIdentifier>{c1536353-e9b9-40b9-ba66-7ba668f00fc9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DirectX11\SystemWrapper">
+      <UniqueIdentifier>{b7a9426f-488d-46de-8dd9-35936d265c8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{d1125617-892b-469a-9930-bb42508ef5f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectXTex\DirectXTex.h">
@@ -91,6 +97,12 @@
     <ClInclude Include="DirectX11\RenderingState\ViewportSetting\ViewportSetting.h">
       <Filter>DirectX11\RenderingState\ViewPortSetting</Filter>
     </ClInclude>
+    <ClInclude Include="DirectX11\SystemWrapper\SystemWrapper.h">
+      <Filter>DirectX11\SystemWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\CDirectInput.h">
+      <Filter>Input</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectXTex\DirectXTex.inl">
@@ -139,6 +151,9 @@
     </ClCompile>
     <ClCompile Include="DirectX11\RenderingState\ViewportSetting\ViewportSetting.cpp">
       <Filter>DirectX11\RenderingState\ViewPortSetting</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectX11\SystemWrapper\SystemWrapper.cpp">
+      <Filter>DirectX11\SystemWrapper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

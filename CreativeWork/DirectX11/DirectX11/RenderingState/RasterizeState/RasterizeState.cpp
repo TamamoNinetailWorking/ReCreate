@@ -35,42 +35,31 @@ bool CRasterizeState::raster_state(ID3D11RasterizerState*& rasterState,State sta
 	{
 		case State::CullingNone:
 
-			create_rasterizer_state(rasterState, D3D11_CULL_NONE, D3D11_FILL_SOLID);
-
-			break;
+			return create_rasterizer_state(rasterState, D3D11_CULL_NONE, D3D11_FILL_SOLID);
 
 		case State::FrontCulling:
 
-			create_rasterizer_state(rasterState, D3D11_CULL_FRONT, D3D11_FILL_SOLID);
-
-			break;
+			return create_rasterizer_state(rasterState, D3D11_CULL_FRONT, D3D11_FILL_SOLID);
 
 		case State::BackCulling:
 
-			create_rasterizer_state(rasterState, D3D11_CULL_BACK, D3D11_FILL_SOLID);
-
-			break;
+			return create_rasterizer_state(rasterState, D3D11_CULL_BACK, D3D11_FILL_SOLID);
 
 		case State::CullingNone_WireFrame:
 
-			create_rasterizer_state(rasterState, D3D11_CULL_NONE, D3D11_FILL_WIREFRAME);
-
-			break;
+			return create_rasterizer_state(rasterState, D3D11_CULL_NONE, D3D11_FILL_WIREFRAME);
 
 		case State::FrontCulling_WireFrame:
 
-			create_rasterizer_state(rasterState, D3D11_CULL_FRONT, D3D11_FILL_WIREFRAME);
-
-			break;
+			return create_rasterizer_state(rasterState, D3D11_CULL_FRONT, D3D11_FILL_WIREFRAME);
 
 		case State::BackCulling_WireFrame:
 
-			create_rasterizer_state(rasterState, D3D11_CULL_BACK, D3D11_FILL_WIREFRAME);
-
-			break;
+			return create_rasterizer_state(rasterState, D3D11_CULL_BACK, D3D11_FILL_WIREFRAME);
 
 		default:
-			break;
+			
+			return false;
 	}
 }
 

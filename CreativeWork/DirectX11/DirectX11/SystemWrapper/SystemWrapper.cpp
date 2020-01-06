@@ -181,3 +181,42 @@ void CGraphicsSystem::SetRenderTarget(ID3D11RenderTargetView*& rtv, ID3D11DepthS
 {
 	PrimaryDevice().GetImmediateContext()->OMSetRenderTargets(1,&rtv, dsv);
 }
+
+void CGraphicsSystem::ClearRenderTarget(ID3D11RenderTargetView*& render_target, const FLOAT* color)
+{
+	PrimaryDevice().GetImmediateContext()->ClearRenderTargetView(
+		render_target,
+		color);
+}
+
+void CGraphicsSystem::ClearDepthStencil(ID3D11DepthStencilView*& depth_stencil)
+{
+	PrimaryDevice().GetImmediateContext()->ClearDepthStencilView(
+		depth_stencil, 
+		D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 
+		1.0f, 0);
+}
+
+void CGraphicsSystem::ClearForColor(FLOAT r, FLOAT g, FLOAT b)
+{
+	float color[4] = { r,g,b,1 };
+	//カラーバッファクリア
+	ClearRenderTarget(
+		m_pRenderTarget->GetRenderTargetView(),
+		color);
+
+	//デプスステンシルバッファクリア
+	ClearDepthStencil(m_pDepthStencil->GetDepthStencilView());
+
+	return;
+}
+
+void CGraphicsSystem::ClearBuffer()
+{
+	ClearForColor(1,1,1);
+}
+
+void CGraphicsSystem::Present()
+{
+	PrimaryDevice().GetSwapChain()->Present(0, 0);
+}

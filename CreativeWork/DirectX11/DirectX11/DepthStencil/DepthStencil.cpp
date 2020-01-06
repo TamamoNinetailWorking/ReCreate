@@ -9,7 +9,7 @@ CDepthStencil::CDepthStencil()
 	m_pDevice = nullptr;
 }
 
-explicit CDepthStencil::CDepthStencil(ID3D11Device*& device)
+CDepthStencil::CDepthStencil(ID3D11Device*& device)
 {
 	Init(device);
 }
