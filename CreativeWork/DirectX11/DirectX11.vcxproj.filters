@@ -20,6 +20,15 @@
     <Filter Include="DirectX11\RenderTarget">
       <UniqueIdentifier>{a4d08804-bce8-4e8e-83bc-992a221559e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DirectX11\DepthStencil">
+      <UniqueIdentifier>{b306551d-b898-4c3b-b79d-14baafa46387}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX11\RenderingState">
+      <UniqueIdentifier>{f0271b10-23fe-4247-bd61-8dd6439ba1a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX11\RenderingState\DepthStencilState">
+      <UniqueIdentifier>{bcae5293-7fcf-4d11-a084-c7620dbfc37e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectXTex\DirectXTex.h">
@@ -58,6 +67,12 @@
     <ClInclude Include="DirectX11\RenderTarget\RenderTargeth.h">
       <Filter>DirectX11\RenderTarget</Filter>
     </ClInclude>
+    <ClInclude Include="DirectX11\DepthStencil\DepthStencil.h">
+      <Filter>DirectX11\DepthStencil</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX11\RenderingState\DepthStencilState\DepthStencilState.h">
+      <Filter>DirectX11\RenderingState\DepthStencilState</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectXTex\DirectXTex.inl">
@@ -91,6 +106,12 @@
     </ClCompile>
     <ClCompile Include="DirectX11\RenderTarget\RenderTarget.cpp">
       <Filter>DirectX11\RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectX11\DepthStencil\DepthStencil.cpp">
+      <Filter>DirectX11\DepthStencil</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectX11\RenderingState\DepthStencilState\DepthStencilState.cpp">
+      <Filter>DirectX11\RenderingState\DepthStencilState</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
