@@ -44,6 +44,15 @@
     <Filter Include="Input">
       <UniqueIdentifier>{d1125617-892b-469a-9930-bb42508ef5f3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{4b4404f3-73f2-4741-8743-d1232f85b6e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\ShaderCast">
+      <UniqueIdentifier>{f47d6698-ea6f-4cf2-857c-efc5437b0f62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\ShaderManager">
+      <UniqueIdentifier>{57d2d7ca-e2b3-489d-82f3-18116f473420}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectXTex\DirectXTex.h">
@@ -103,6 +112,18 @@
     <ClInclude Include="Input\CDirectInput.h">
       <Filter>Input</Filter>
     </ClInclude>
+    <ClInclude Include="Shader\ShaderCast\ShaderCast.h">
+      <Filter>Shader\ShaderCast</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\ShaderManager\ShaderManager.h">
+      <Filter>Shader\ShaderManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\ShaderManager\ShaderManagementSpace.h">
+      <Filter>Shader\ShaderManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\ShaderSet.h">
+      <Filter>Shader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectXTex\DirectXTex.inl">
@@ -154,6 +175,18 @@
     </ClCompile>
     <ClCompile Include="DirectX11\SystemWrapper\SystemWrapper.cpp">
       <Filter>DirectX11\SystemWrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\ShaderCast\ShaderCast.cpp">
+      <Filter>Shader\ShaderCast</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\ShaderCast\ShaderCastTextureResorce.cpp">
+      <Filter>Shader\ShaderCast</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\ShaderManager\ShaderManagerMain.cpp">
+      <Filter>Shader\ShaderManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader\ShaderSet.cpp">
+      <Filter>Shader</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

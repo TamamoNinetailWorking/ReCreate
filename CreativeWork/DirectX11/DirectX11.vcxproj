@@ -143,6 +143,10 @@
     <ClInclude Include="IMGUI\imstb_textedit.h" />
     <ClInclude Include="IMGUI\imstb_truetype.h" />
     <ClInclude Include="Input\CDirectInput.h" />
+    <ClInclude Include="Shader\ShaderCast\ShaderCast.h" />
+    <ClInclude Include="Shader\ShaderManager\ShaderManagementSpace.h" />
+    <ClInclude Include="Shader\ShaderManager\ShaderManager.h" />
+    <ClInclude Include="Shader\ShaderSet.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectXTex\DirectXTex.inl" />
@@ -163,6 +167,10 @@
     <ClCompile Include="IMGUI\imgui_impl_dx11.cpp" />
     <ClCompile Include="IMGUI\imgui_impl_win32.cpp" />
     <ClCompile Include="IMGUI\imgui_widgets.cpp" />
+    <ClCompile Include="Shader\ShaderCast\ShaderCast.cpp" />
+    <ClCompile Include="Shader\ShaderCast\ShaderCastTextureResorce.cpp" />
+    <ClCompile Include="Shader\ShaderManager\ShaderManagerMain.cpp" />
+    <ClCompile Include="Shader\ShaderSet.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

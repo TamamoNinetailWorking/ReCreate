@@ -12,7 +12,7 @@ private:
 
 	/* Device */
 	ID3D11Device* m_pDevice;
-	ID3D11DeviceContext*& m_pDeviceContext;
+	ID3D11DeviceContext* m_pDeviceContext;
 
 	/* ShaderSet */
 	NShaderManager::VertexShaderMap m_pVertexShaderMap;
@@ -27,9 +27,10 @@ private:
 
 public:
 
-	virtual ~CShaderManager();
+	virtual ~CShaderManager() {};
 
 	void Init(ID3D11Device*& device, ID3D11DeviceContext*& device_context);
+	void Exit();
 
 	bool CheckWhetherVertexShaderIsAbleToChatch(
 		const char* file_name,

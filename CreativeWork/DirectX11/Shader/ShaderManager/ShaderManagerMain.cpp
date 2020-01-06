@@ -42,11 +42,6 @@ static Shader ShaderList_Get(
 	return map[NKeyStruct(file_name, func_name)];
 }
 
-CShaderManager::~CShaderManager()
-{
-	AllClear();
-}
-
 void CShaderManager::AllClear()
 {
 	m_pVertexShaderMap.clear();
@@ -62,7 +57,12 @@ void CShaderManager::Init(ID3D11Device*& device,ID3D11DeviceContext*& device_con
 	m_pDevice = device;
 	m_pDeviceContext = device_context;
 
-	ShaderCast().Init(m_pDevice, m_pDeviceContext);
+	//ShaderCast().Init(m_pDevice, m_pDeviceContext);
+}
+
+void CShaderManager::Exit()
+{
+	AllClear();
 }
 
 bool CShaderManager::CheckWhetherVertexShaderIsAbleToChatch(const char* file_name, const char* func_name)
