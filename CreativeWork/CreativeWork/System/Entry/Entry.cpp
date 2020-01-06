@@ -5,8 +5,9 @@
 #include <BaseSystem/FramePerSec/FramePerSec.h>
 #include <CWindow.h>
 #include <DirectX11/SystemWrapper/SystemWrapper.h>
-
-#include <d3d11.h>
+#include <DirectX11/PrimaryDevice/DirectX11.h>
+#include <Shader/ShaderCast/ShaderCast.h>
+#include <Shader/ShaderManager/ShaderManager.h>
 
 
 #pragma comment(lib,"BaseSystem.lib")
@@ -54,6 +55,14 @@ bool PrimaryInit()
 	}
 
 	std::cout << "Create Successfull GraphicsSystem!!" << std::endl;
+
+	/* ShaderManager Init */
+	ShaderCast().Init(
+		PrimaryDevice().GetDevice(),
+		PrimaryDevice().GetImmediateContext());
+	ShaderManager().Init(
+		PrimaryDevice().GetDevice(),
+		PrimaryDevice().GetImmediateContext());
 
 	return true;
 }
