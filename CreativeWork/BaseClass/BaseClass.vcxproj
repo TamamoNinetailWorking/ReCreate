@@ -32,7 +32,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -71,9 +71,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(SolutionDir)BaseClass;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)BaseClass\Bin\Debug\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>$(SolutionDir)BaseClass;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)BaseClass\Bin\Release\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -120,8 +122,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\Base\Object.h" />
+    <ClInclude Include="Object\Component\Component.h" />
+    <ClInclude Include="Object\ObjectManager\ObjectManager.h" />
     <ClInclude Include="Singleton\Singleton.h" />
     <ClInclude Include="Utility\EnderUtility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Object\Base\Object.cpp" />
+    <ClCompile Include="Object\ObjectManager\ObjectManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -71,12 +71,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(SolutionDir)BaseClass;$(SolutionDir)BaseSystem\BaseSystem\Frame;$(SolutionDir)CWindow\Window;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)CWindow\Bin\Debug;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)CWindow\Bin\Debug;$(SolutionDir)BaseClass\Bin\Debug;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)BaseSystem\Bin\Debug\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>$(SolutionDir)BaseClass;$(SolutionDir)BaseSystem\BaseSystem\Frame;$(SolutionDir)CWindow\Window;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)CWindow\Bin\Release;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)CWindow\Bin\Release;$(SolutionDir)BaseClass\Bin\Release;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)BaseSystem\Bin\Release\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

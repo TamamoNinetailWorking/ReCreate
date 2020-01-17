@@ -7,6 +7,18 @@
     <Filter Include="Utility">
       <UniqueIdentifier>{0fe6a671-3818-43f4-a2db-7b10fa83f6bc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{e9bb34ad-cc7b-4ba7-8624-305e989c2dd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Component">
+      <UniqueIdentifier>{0b08f65b-1ca8-4cd2-9e23-314f14e7f428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Base">
+      <UniqueIdentifier>{7db7e490-57c3-4402-82a5-2fa628e526a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\ObjectManager">
+      <UniqueIdentifier>{42daa53d-2734-4982-be28-aee278fab507}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singleton\Singleton.h">
@@ -15,5 +27,22 @@
     <ClInclude Include="Utility\EnderUtility.h">
       <Filter>Utility</Filter>
     </ClInclude>
+    <ClInclude Include="Object\Component\Component.h">
+      <Filter>Object\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Base\Object.h">
+      <Filter>Object\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\ObjectManager\ObjectManager.h">
+      <Filter>Object\ObjectManager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Object\Base\Object.cpp">
+      <Filter>Object\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\ObjectManager\ObjectManager.cpp">
+      <Filter>Object\ObjectManager</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

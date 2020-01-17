@@ -1,6 +1,7 @@
 #include <windows.h>
 #include <iostream>
 
+#include <Object/ObjectManager/ObjectManager.h>
 #include <BaseSystem/Frame/BaseSystem.h>
 #include <BaseSystem/FramePerSec/FramePerSec.h>
 #include <CWindow.h>
@@ -9,7 +10,7 @@
 #include <Shader/ShaderCast/ShaderCast.h>
 #include <Shader/ShaderManager/ShaderManager.h>
 
-
+#pragma comment(lib,"BaseClass.lib")
 #pragma comment(lib,"BaseSystem.lib")
 #pragma comment(lib,"CWindow.lib")
 #pragma comment(lib,"DirectX11.lib")
@@ -64,12 +65,17 @@ bool PrimaryInit()
 		PrimaryDevice().GetDevice(),
 		PrimaryDevice().GetImmediateContext());
 
+	/* ObjectManager Init */
+	ObjectManager().Init();
+
 	return true;
 }
 
 //Primary Exit
 void PrimaryExit()
 {
+	ObjectManager().Exit();
+
 	GraphicsSystem().Exit();
 
 	GetFPSManager().Exit();

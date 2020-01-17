@@ -19,6 +19,15 @@
     <Filter Include="System\Entry">
       <UniqueIdentifier>{14f96dda-8973-48cf-b2fa-ca61cc3de387}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{7cc5b2a8-0dba-4ac6-a27a-eb146201ef96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\RayMarch">
+      <UniqueIdentifier>{f8946917-1d61-4b27-90a6-a89af465078e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{34d284c7-aa58-4f86-8796-e6ba0909e894}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="System\App.cpp">
@@ -33,5 +42,13 @@
     <ClCompile Include="System\PrimaryMain.cpp">
       <Filter>System</Filter>
     </ClCompile>
+    <ClCompile Include="Object\Raymarch\Raymarch.cpp">
+      <Filter>Object\RayMarch</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Object\Raymarch\Raymarch.h">
+      <Filter>Object\RayMarch</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

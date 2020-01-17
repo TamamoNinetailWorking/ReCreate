@@ -6,14 +6,8 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CreativeWork", "CreativeWork\CreativeWork.vcxproj", "{E308B05F-0549-4E55-9A2B-3BA79C627F46}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DirectX11", "DirectX11\DirectX11.vcxproj", "{811A3DD9-FA4E-4D05-BBB2-0520DCAC74B3}"
-	ProjectSection(ProjectDependencies) = postProject
-		{5A7B5977-CB41-444C-971E-0D256B81C79C} = {5A7B5977-CB41-444C-971E-0D256B81C79C}
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaseSystem", "BaseSystem\BaseSystem.vcxproj", "{F1FC1906-FFFA-4181-99DB-C8130E5D5C0F}"
-	ProjectSection(ProjectDependencies) = postProject
-		{5A7B5977-CB41-444C-971E-0D256B81C79C} = {5A7B5977-CB41-444C-971E-0D256B81C79C}
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaseClass", "BaseClass\BaseClass.vcxproj", "{5A7B5977-CB41-444C-971E-0D256B81C79C}"
 EndProject
