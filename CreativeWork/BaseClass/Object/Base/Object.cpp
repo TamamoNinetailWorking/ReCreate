@@ -57,6 +57,14 @@ void CObject::Update()
 	return;
 }
 
+void CObject::DrawUpdate()
+{
+	for (auto com : m_pComponentList)
+	{
+		com->DrawUpdate();
+	}
+}
+
 void CObject::Draw()
 {
 	for (auto com : m_pComponentList)

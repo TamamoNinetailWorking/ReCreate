@@ -27,6 +27,10 @@ public:
 	void Init();
 	void Exit();
 
+	void Update();
+	void DrawUpdate();
+	void Draw();
+
 	CObject*& GetObject(UINT id);
 	CObject* const GetObject(std::string name);
 };

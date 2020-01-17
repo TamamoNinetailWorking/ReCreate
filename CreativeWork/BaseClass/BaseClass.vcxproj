@@ -124,6 +124,7 @@
   <ItemGroup>
     <ClInclude Include="Object\Base\Object.h" />
     <ClInclude Include="Object\Component\Component.h" />
+    <ClInclude Include="Object\DrawComponent\DrawComponent.h" />
     <ClInclude Include="Object\ObjectManager\ObjectManager.h" />
     <ClInclude Include="Singleton\Singleton.h" />
     <ClInclude Include="Utility\EnderUtility.h" />

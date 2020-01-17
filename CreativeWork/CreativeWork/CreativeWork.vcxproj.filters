@@ -28,6 +28,15 @@
     <Filter Include="Component">
       <UniqueIdentifier>{34d284c7-aa58-4f86-8796-e6ba0909e894}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Component\RaymarchComponent">
+      <UniqueIdentifier>{87c209ff-f245-4c7f-b9ac-f37a33b02106}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Base">
+      <UniqueIdentifier>{6c183561-15f3-4509-803c-c361defe7924}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Base\UserInterface">
+      <UniqueIdentifier>{e5ca9d0d-4cf8-44bb-bf03-1571cbec9f5c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="System\App.cpp">
@@ -45,10 +54,22 @@
     <ClCompile Include="Object\Raymarch\Raymarch.cpp">
       <Filter>Object\RayMarch</Filter>
     </ClCompile>
+    <ClCompile Include="Component\RaymarchComponent\RaymarchComponent.cpp">
+      <Filter>Component\RaymarchComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Base\UserInterface\UserInterface.cpp">
+      <Filter>Component\Base\UserInterface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object\Raymarch\Raymarch.h">
       <Filter>Object\RayMarch</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\RaymarchComponent\RaymarchComponent.h">
+      <Filter>Component\RaymarchComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Base\UserInterface\UserInterface.h">
+      <Filter>Component\Base\UserInterface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

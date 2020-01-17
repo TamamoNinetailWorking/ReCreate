@@ -70,11 +70,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)BaseClass;$(SolutionDir)CWindow\Window;$(SolutionDir)BaseSystem;$(SolutionDir)DirectX11;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)BaseClass;$(SolutionDir)CWindow\Window;$(SolutionDir)BaseSystem;$(SolutionDir)DirectX11;$(SolutionDir)CreativeWork;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)BaseClass\Bin\Debug;$(SolutionDir)BaseSystem\Bin\Debug;$(SolutionDir)CWindow\Bin\Debug;$(SolutionDir)DirectX11\Bin\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(SolutionDir)BaseClass;$(SolutionDir)CWindow\Window;$(SolutionDir)BaseSystem;$(SolutionDir)DirectX11;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)BaseClass;$(SolutionDir)CWindow\Window;$(SolutionDir)BaseSystem;$(SolutionDir)DirectX11;$(SolutionDir)CreativeWork;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)CWindow\Bin\Release;$(SolutionDir)BaseClass\Bin\Release;$(SolutionDir)BaseSystem\Bin\Release;$(SolutionDir)DirectX11\Bin\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -122,6 +122,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Component\Base\UserInterface\UserInterface.cpp" />
+    <ClCompile Include="Component\RaymarchComponent\RaymarchComponent.cpp" />
     <ClCompile Include="Object\Raymarch\Raymarch.cpp" />
     <ClCompile Include="System\App.cpp" />
     <ClCompile Include="System\Entry\Entry.cpp" />
@@ -129,6 +131,8 @@
     <ClCompile Include="System\PrimaryMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Component\Base\UserInterface\UserInterface.h" />
+    <ClInclude Include="Component\RaymarchComponent\RaymarchComponent.h" />
     <ClInclude Include="Object\Raymarch\Raymarch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -19,6 +19,9 @@
     <Filter Include="Object\ObjectManager">
       <UniqueIdentifier>{42daa53d-2734-4982-be28-aee278fab507}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\DrawComponent">
+      <UniqueIdentifier>{8ab17eb1-d6b1-42d7-b192-c77128e9a79d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singleton\Singleton.h">
@@ -35,6 +38,9 @@
     </ClInclude>
     <ClInclude Include="Object\ObjectManager\ObjectManager.h">
       <Filter>Object\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\DrawComponent\DrawComponent.h">
+      <Filter>Object\DrawComponent</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

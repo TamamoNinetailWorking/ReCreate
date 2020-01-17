@@ -34,6 +34,30 @@ void CObjectManager::Exit()
 	m_pObjectList.clear();
 }
 
+void CObjectManager::Update()
+{
+	for (auto mp : m_pObjectList)
+	{
+		mp.second->Update();
+	}
+}
+
+void CObjectManager::DrawUpdate()
+{
+	for (auto mp : m_pObjectList)
+	{
+		mp.second->DrawUpdate();
+	}
+}
+
+void CObjectManager::Draw()
+{
+	for (auto mp : m_pObjectList)
+	{
+		mp.second->Draw();
+	}
+}
+
 CObject*& CObjectManager::GetObject(UINT id)
 {
 	return m_pObjectList[id];
