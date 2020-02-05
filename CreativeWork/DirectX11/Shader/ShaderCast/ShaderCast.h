@@ -26,44 +26,60 @@ public:
 
 	void Init(ID3D11Device*& device,ID3D11DeviceContext*& device_context);
 
+	bool CreateClassLinkage(bool use_class, ID3D11ClassLinkage*& pClassLinkage);
+
 	bool CreateVertexShader(
 		char* szFileName,
 		LPCSTR szFuncName,
 		D3D11_INPUT_ELEMENT_DESC* layout,
 		unsigned int numElements,
 		ID3D11VertexShader*& pVertexShader,
-		ID3D11InputLayout*& pInputLayout);
+		ID3D11InputLayout*& pInputLayout,
+		ID3D11ClassLinkage*& pClassLinkage,
+		bool use_class);
 
 	bool CreateVertexShader(
 		char* szFileName,
 		LPCSTR szFuncName,
 		ID3D11VertexShader*& pVertexShader,
-		ID3D11InputLayout*& pInputLayout);
+		ID3D11InputLayout*& pInputLayout,
+		ID3D11ClassLinkage*& pClassLinkage,
+		bool use_class);
 
 	bool CreatePixelShader(
 		char*szFileName,
 		LPCSTR szFuncName,
-		ID3D11PixelShader*& pPixelShader);
+		ID3D11PixelShader*& pPixelShader,
+		ID3D11ClassLinkage*& pClassLinkage,
+		bool use_class);
 
 	bool CreateGeometryShader(
 		char*szFileName,
 		LPCSTR szFuncName,
-		ID3D11GeometryShader*& pGeometryShader);
+		ID3D11GeometryShader*& pGeometryShader,
+		ID3D11ClassLinkage*& pClassLinkage,
+		bool use_class);
 
 	bool CreateHullShader(
 		char* szFileName,
 		LPCSTR szFuncName,
-		ID3D11HullShader*& pHullShader);
+		ID3D11HullShader*& pHullShader,
+		ID3D11ClassLinkage*& pClassLinkage,
+		bool use_class);
 
 	bool CreateDomainShader(
 		char* szFileName,
 		LPCSTR szFuncName,
-		ID3D11DomainShader*& pDomainShader);
+		ID3D11DomainShader*& pDomainShader,
+		ID3D11ClassLinkage*& pClassLinkage,
+		bool use_class);
 
 	bool CreateComputeShader(
 		char* szFileName,
 		LPCSTR szFuncName,
-		ID3D11ComputeShader*& pComputeShader);
+		ID3D11ComputeShader*& pComputeShader,
+		ID3D11ClassLinkage*& pClassLinkage,
+		bool use_class);
 
 	bool CreateVertexBuffer(
 		UINT stride,

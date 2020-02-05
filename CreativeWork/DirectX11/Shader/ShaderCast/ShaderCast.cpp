@@ -14,6 +14,28 @@ void CShaderCast::Init(ID3D11Device*& device, ID3D11DeviceContext*& device_conte
 	m_pDeviceContext = device_context;
 }
 
+bool CShaderCast::CreateClassLinkage(bool use_class, ID3D11ClassLinkage*& pClassLinkage)
+{
+	if (!use_class)
+	{
+		pClassLinkage = nullptr;
+		return true;
+	}
+	else
+	{
+		HRESULT hr;
+		hr = m_pDevice->CreateClassLinkage(&pClassLinkage);
+		if (FAILED(hr))
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+}
+
 HRESULT CShaderCast::CompileShaderFromFile(char* szFilename, LPCSTR szEntryPoint, LPCSTR szShaderModel, ID3DBlob** ppBlobOut)
 {
 	ID3DBlob* p1 = nullptr;
@@ -108,10 +130,13 @@ DXGI_FORMAT CShaderCast::GetDxgiFormat(D3D_REGISTER_COMPONENT_TYPE type, BYTE ma
 	return DXGI_FORMAT_UNKNOWN;
 }
 
-bool CShaderCast::CreateVertexShader(char* szFileName,LPCSTR szFuncName,D3D11_INPUT_ELEMENT_DESC* layout,unsigned int numElements,ID3D11VertexShader*& pVertexShader,ID3D11InputLayout*& pInputLayout)
+bool CShaderCast::CreateVertexShader(char* szFileName,LPCSTR szFuncName,D3D11_INPUT_ELEMENT_DESC* layout,unsigned int numElements,ID3D11VertexShader*& pVertexShader,ID3D11InputLayout*& pInputLayout,ID3D11ClassLinkage*& pClassLinkage,
+	bool use_class)
 {
 	ID3DBlob* pBlob = nullptr;
 	LPCSTR shaderModel = "vs_5_0";
+
+	CreateClassLinkage(use_class, pClassLinkage);
 
 	HRESULT hr = CompileShaderFromFile(szFileName, szFuncName, shaderModel, &pBlob);
 	if (FAILED(hr))
@@ -123,7 +148,7 @@ bool CShaderCast::CreateVertexShader(char* szFileName,LPCSTR szFuncName,D3D11_IN
 	hr = m_pDevice->CreateVertexShader(
 		pBlob->GetBufferPointer(),
 		pBlob->GetBufferSize(),
-		nullptr,
+		pClassLinkage,
 		&pVertexShader);
 	if (FAILED(hr))
 	{
@@ -148,10 +173,12 @@ bool CShaderCast::CreateVertexShader(char* szFileName,LPCSTR szFuncName,D3D11_IN
 	return true;
 }
 
-bool CShaderCast::CreateVertexShader(char* szFileName, LPCSTR szFuncName, ID3D11VertexShader*& pVertexShader, ID3D11InputLayout*& pInputLayout)
+bool CShaderCast::CreateVertexShader(char* szFileName, LPCSTR szFuncName, ID3D11VertexShader*& pVertexShader, ID3D11InputLayout*& pInputLayout,ID3D11ClassLinkage*& pClassLinkage,bool use_class)
 {
 	ID3DBlob* pBlob = nullptr;
 	LPCSTR shaderModel = "vs_5_0";
+
+	CreateClassLinkage(use_class, pClassLinkage);
 
 	HRESULT hr = CompileShaderFromFile(szFileName, szFuncName, shaderModel, &pBlob);
 	if (FAILED(hr))
@@ -163,7 +190,7 @@ bool CShaderCast::CreateVertexShader(char* szFileName, LPCSTR szFuncName, ID3D11
 	hr = m_pDevice->CreateVertexShader(
 		pBlob->GetBufferPointer(),
 		pBlob->GetBufferSize(),
-		nullptr,
+		pClassLinkage,
 		&pVertexShader);
 	if (FAILED(hr))
 	{
@@ -234,10 +261,12 @@ bool CShaderCast::CreateVertexShader(char* szFileName, LPCSTR szFuncName, ID3D11
 	return true;
 }
 
-bool CShaderCast::CreatePixelShader(char*szFileName, LPCSTR szFuncName, ID3D11PixelShader*& pPixelShader)
+bool CShaderCast::CreatePixelShader(char*szFileName, LPCSTR szFuncName, ID3D11PixelShader*& pPixelShader,ID3D11ClassLinkage*& pClassLinkage,bool use_class)
 {
 	ID3DBlob* pBlob = nullptr;
 	LPCSTR shaderModel = "ps_5_0";
+
+	CreateClassLinkage(use_class, pClassLinkage);
 
 	HRESULT hr = CompileShaderFromFile(szFileName, szFuncName, shaderModel, &pBlob);
 	if (FAILED(hr))
@@ -248,7 +277,7 @@ bool CShaderCast::CreatePixelShader(char*szFileName, LPCSTR szFuncName, ID3D11Pi
 	hr = m_pDevice->CreatePixelShader(
 		pBlob->GetBufferPointer(),
 		pBlob->GetBufferSize(),
-		nullptr,
+		pClassLinkage,
 		&pPixelShader);
 	if (FAILED(hr))
 	{
@@ -259,10 +288,12 @@ bool CShaderCast::CreatePixelShader(char*szFileName, LPCSTR szFuncName, ID3D11Pi
 	return true;
 }
 
-bool CShaderCast::CreateGeometryShader(char*szFileName, LPCSTR szFuncName, ID3D11GeometryShader*& pGeometryShader)
+bool CShaderCast::CreateGeometryShader(char*szFileName, LPCSTR szFuncName, ID3D11GeometryShader*& pGeometryShader,ID3D11ClassLinkage*& pClassLinkage,bool use_class)
 {
 	ID3DBlob* pBlob = nullptr;
 	LPCSTR shaderModel = "gs_5_0";
+
+	CreateClassLinkage(use_class, pClassLinkage);
 
 	HRESULT hr = CompileShaderFromFile(szFileName, szFuncName, shaderModel, &pBlob);
 	if (FAILED(hr))
@@ -273,7 +304,7 @@ bool CShaderCast::CreateGeometryShader(char*szFileName, LPCSTR szFuncName, ID3D1
 	hr = m_pDevice->CreateGeometryShader(
 		pBlob->GetBufferPointer(),
 		pBlob->GetBufferSize(),
-		nullptr,
+		pClassLinkage,
 		&pGeometryShader);
 	if (FAILED(hr))
 	{
@@ -284,10 +315,12 @@ bool CShaderCast::CreateGeometryShader(char*szFileName, LPCSTR szFuncName, ID3D1
 	return true;
 }
 
-bool CShaderCast::CreateHullShader(char* szFileName, LPCSTR szFuncName, ID3D11HullShader*& pHullShader)
+bool CShaderCast::CreateHullShader(char* szFileName, LPCSTR szFuncName, ID3D11HullShader*& pHullShader,ID3D11ClassLinkage*& pClassLinkage,bool use_class)
 {
 	ID3DBlob* pBlob = nullptr;
 	LPCSTR shaderModel = "hs_5_0";
+
+	CreateClassLinkage(use_class, pClassLinkage);
 
 	HRESULT hr = CompileShaderFromFile(szFileName, szFuncName, shaderModel, &pBlob);
 	if (FAILED(hr))
@@ -298,7 +331,7 @@ bool CShaderCast::CreateHullShader(char* szFileName, LPCSTR szFuncName, ID3D11Hu
 	hr = m_pDevice->CreateHullShader(
 		pBlob->GetBufferPointer(),
 		pBlob->GetBufferSize(),
-		nullptr,
+		pClassLinkage,
 		&pHullShader);
 	if (FAILED(hr))
 	{
@@ -309,10 +342,12 @@ bool CShaderCast::CreateHullShader(char* szFileName, LPCSTR szFuncName, ID3D11Hu
 	return true;
 }
 
-bool CShaderCast::CreateDomainShader(char* szFileName, LPCSTR szFuncName, ID3D11DomainShader*& pDomainShader)
+bool CShaderCast::CreateDomainShader(char* szFileName, LPCSTR szFuncName, ID3D11DomainShader*& pDomainShader,ID3D11ClassLinkage*& pClassLinkage,bool use_class)
 {
 	ID3DBlob* pBlob = nullptr;
 	LPCSTR shaderModel = "ds_5_0";
+
+	CreateClassLinkage(use_class, pClassLinkage);
 
 	HRESULT hr = CompileShaderFromFile(szFileName, szFuncName, shaderModel, &pBlob);
 	if (FAILED(hr))
@@ -323,7 +358,7 @@ bool CShaderCast::CreateDomainShader(char* szFileName, LPCSTR szFuncName, ID3D11
 	hr = m_pDevice->CreateDomainShader(
 		pBlob->GetBufferPointer(),
 		pBlob->GetBufferSize(),
-		nullptr,
+		pClassLinkage,
 		&pDomainShader);
 	if (FAILED(hr))
 	{
@@ -334,10 +369,12 @@ bool CShaderCast::CreateDomainShader(char* szFileName, LPCSTR szFuncName, ID3D11
 	return true;
 }
 
-bool CShaderCast::CreateComputeShader(char* szFileName, LPCSTR szFuncName, ID3D11ComputeShader*& pComputeShader)
+bool CShaderCast::CreateComputeShader(char* szFileName, LPCSTR szFuncName, ID3D11ComputeShader*& pComputeShader,ID3D11ClassLinkage*& pClassLinkage,bool use_class)
 {
 	ID3DBlob* pBlob = nullptr;
 	LPCSTR shaderModel = "cs_5_0";
+
+	CreateClassLinkage(use_class, pClassLinkage);
 
 	HRESULT hr = CompileShaderFromFile(szFileName, szFuncName, shaderModel, &pBlob);
 	if (FAILED(hr))
@@ -348,7 +385,7 @@ bool CShaderCast::CreateComputeShader(char* szFileName, LPCSTR szFuncName, ID3D1
 	hr = m_pDevice->CreateComputeShader(
 		pBlob->GetBufferPointer(),
 		pBlob->GetBufferSize(),
-		nullptr,
+		pClassLinkage,
 		&pComputeShader);
 	if (FAILED(hr))
 	{

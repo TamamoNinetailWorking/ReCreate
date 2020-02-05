@@ -100,22 +100,24 @@ bool CShaderManager::CheckWhetherComputeShaderIsAbleToChatch(const char* file_na
 	return ShaderList_Check<ID3D11ComputeShader*>(m_pComputeShaderMap, file_name, func_name);
 }
 
-bool CShaderManager::GetVertexShader(const char* file_name, const char* func_name, ID3D11VertexShader*& pVertexShader, ID3D11InputLayout*& pInputLayout)
+bool CShaderManager::GetVertexShader(const char* file_name, const char* func_name, ID3D11VertexShader*& pVertexShader, ID3D11InputLayout*& pInputLayout,ID3D11ClassLinkage*& pClassLinkage,bool use_class)
 {
 	if (CheckWhetherVertexShaderIsAbleToChatch(file_name, func_name))
 	{
 		//Exists.
 		pVertexShader = ShaderList_Get<ID3D11VertexShader*>(m_pVertexShaderMap, file_name, func_name);
 		pInputLayout = ShaderList_Get<ID3D11InputLayout*>(m_pInputLayoutMap, file_name, func_name);
+		pClassLinkage = ShaderList_Get<ID3D11ClassLinkage*>(m_pVertexLinkMap, file_name, func_name);
 		return true;
 	}
 	else
 	{
 		//Not Exists.
-		if (ShaderCast().CreateVertexShader((char*)file_name, func_name, pVertexShader, pInputLayout))
+		if (ShaderCast().CreateVertexShader((char*)file_name, func_name, pVertexShader, pInputLayout,pClassLinkage,use_class))
 		{
 			ShaderList_Add <ID3D11VertexShader*>(m_pVertexShaderMap, pVertexShader, file_name, func_name);
 			ShaderList_Add<ID3D11InputLayout*>(m_pInputLayoutMap, pInputLayout, file_name, func_name);
+			ShaderList_Add<ID3D11ClassLinkage*>(m_pVertexLinkMap, pClassLinkage, file_name, func_name);
 			return true;
 		}
 		else
@@ -126,7 +128,7 @@ bool CShaderManager::GetVertexShader(const char* file_name, const char* func_nam
 	}
 }
 
-bool CShaderManager::GetPixelShader(const char* file_name, const char* func_name, ID3D11PixelShader*& pPixelShader)
+bool CShaderManager::GetPixelShader(const char* file_name, const char* func_name, ID3D11PixelShader*& pPixelShader,ID3D11ClassLinkage*& pClassLinkage,bool use_class)
 {
 	ID3D11PixelShader* PS;
 
@@ -135,15 +137,17 @@ bool CShaderManager::GetPixelShader(const char* file_name, const char* func_name
 		//Exists.
 		PS = ShaderList_Get<ID3D11PixelShader*>(m_pPixelShaderMap, file_name, func_name);
 		pPixelShader = PS;
+		pClassLinkage = ShaderList_Get<ID3D11ClassLinkage*>(m_pPixelLinkMap, file_name, func_name);
 		return true;
 	}
 	else
 	{
 		//Not Exists.
-		if (ShaderCast().CreatePixelShader((char*)file_name, func_name, pPixelShader))
+		if (ShaderCast().CreatePixelShader((char*)file_name, func_name, pPixelShader,pClassLinkage,use_class))
 		{
 			PS = pPixelShader;
 			ShaderList_Add < ID3D11PixelShader*>(m_pPixelShaderMap, PS, file_name, func_name);
+			ShaderList_Add<ID3D11ClassLinkage*>(m_pPixelLinkMap, pClassLinkage, file_name, func_name);
 			return true;
 		}
 		else
@@ -154,7 +158,7 @@ bool CShaderManager::GetPixelShader(const char* file_name, const char* func_name
 	}
 }
 
-bool CShaderManager::GetGeometryShader(const char* file_name, const char* func_name, ID3D11GeometryShader*& pGeometryShader)
+bool CShaderManager::GetGeometryShader(const char* file_name, const char* func_name, ID3D11GeometryShader*& pGeometryShader, ID3D11ClassLinkage*& pClassLinkage, bool use_class)
 {
 	ID3D11GeometryShader* GS;
 
@@ -163,15 +167,17 @@ bool CShaderManager::GetGeometryShader(const char* file_name, const char* func_n
 		//Exists.
 		GS = ShaderList_Get<ID3D11GeometryShader*>(m_pGeometryShaderMap, file_name, func_name);
 		pGeometryShader = GS;
+		ShaderList_Get<ID3D11ClassLinkage*>(m_pGeometryLinkMap, file_name, func_name);
 		return true;
 	}
 	else
 	{
 		//Not Exists.
-		if (ShaderCast().CreateGeometryShader((char*)file_name, func_name, pGeometryShader))
+		if (ShaderCast().CreateGeometryShader((char*)file_name, func_name, pGeometryShader,pClassLinkage,use_class))
 		{
 			GS = pGeometryShader;
 			ShaderList_Add < ID3D11GeometryShader*>(m_pGeometryShaderMap, GS, file_name, func_name);
+			ShaderList_Add<ID3D11ClassLinkage*>(m_pGeometryLinkMap, pClassLinkage, file_name, func_name);
 			return true;
 		}
 		else
@@ -182,7 +188,7 @@ bool CShaderManager::GetGeometryShader(const char* file_name, const char* func_n
 	}
 }
 
-bool CShaderManager::GetHullShader(const char* file_name, const char* func_name, ID3D11HullShader*& pHullShader)
+bool CShaderManager::GetHullShader(const char* file_name, const char* func_name, ID3D11HullShader*& pHullShader,ID3D11ClassLinkage*& pClassLinkage,bool use_class)
 {
 	ID3D11HullShader* HS;
 
@@ -191,15 +197,17 @@ bool CShaderManager::GetHullShader(const char* file_name, const char* func_name,
 		//Exists.
 		HS = ShaderList_Get<ID3D11HullShader*>(m_pHullShaderMap, file_name, func_name);
 		pHullShader = HS;
+		ShaderList_Get<ID3D11ClassLinkage*>(m_pHullLinkMap, file_name, func_name);
 		return true;
 	}
 	else
 	{
 		//Not Exists.
-		if (ShaderCast().CreateHullShader((char*)file_name, func_name, pHullShader))
+		if (ShaderCast().CreateHullShader((char*)file_name, func_name, pHullShader,pClassLinkage,use_class))
 		{
 			HS = pHullShader;
 			ShaderList_Add < ID3D11HullShader*>(m_pHullShaderMap, HS, file_name, func_name);
+			ShaderList_Add<ID3D11ClassLinkage*>(m_pHullLinkMap, pClassLinkage, file_name, func_name);
 			return true;
 		}
 		else
@@ -210,7 +218,7 @@ bool CShaderManager::GetHullShader(const char* file_name, const char* func_name,
 	}
 }
 
-bool CShaderManager::GetDomainShader(const char* file_name, const char* func_name, ID3D11DomainShader*& pDomainShader)
+bool CShaderManager::GetDomainShader(const char* file_name, const char* func_name, ID3D11DomainShader*& pDomainShader,ID3D11ClassLinkage*& pClassLinkage,bool use_class)
 {
 	ID3D11DomainShader* DS;
 
@@ -219,15 +227,17 @@ bool CShaderManager::GetDomainShader(const char* file_name, const char* func_nam
 		//Exists.
 		DS = ShaderList_Get<ID3D11DomainShader*>(m_pDomainShaderMap, file_name, func_name);
 		pDomainShader = DS;
+		ShaderList_Get<ID3D11ClassLinkage*>(m_pDomainLinkMap, file_name, func_name);
 		return true;
 	}
 	else
 	{
 		//Not Exists.
-		if (ShaderCast().CreateDomainShader((char*)file_name, func_name, pDomainShader))
+		if (ShaderCast().CreateDomainShader((char*)file_name, func_name, pDomainShader,pClassLinkage,use_class))
 		{
 			DS = pDomainShader;
 			ShaderList_Add < ID3D11DomainShader*>(m_pDomainShaderMap, DS, file_name, func_name);
+			ShaderList_Add<ID3D11ClassLinkage*>(m_pDomainLinkMap, pClassLinkage, file_name, func_name);
 			return true;
 		}
 		else
@@ -238,7 +248,7 @@ bool CShaderManager::GetDomainShader(const char* file_name, const char* func_nam
 	}
 }
 
-bool CShaderManager::GetComputeShader(const char* file_name, const char* func_name, ID3D11ComputeShader*& pComputeShader)
+bool CShaderManager::GetComputeShader(const char* file_name, const char* func_name, ID3D11ComputeShader*& pComputeShader,ID3D11ClassLinkage*& pClassLinkage,bool use_class)
 {
 	ID3D11ComputeShader* CS;
 
@@ -247,15 +257,17 @@ bool CShaderManager::GetComputeShader(const char* file_name, const char* func_na
 		//Exists.
 		CS = ShaderList_Get<ID3D11ComputeShader*>(m_pComputeShaderMap, file_name, func_name);
 		pComputeShader = CS;
+		ShaderList_Get<ID3D11ClassLinkage*>(m_pComputeLinkMap, file_name, func_name);
 		return true;
 	}
 	else
 	{
 		//Not Exists.
-		if (ShaderCast().CreateComputeShader((char*)file_name, func_name, pComputeShader))
+		if (ShaderCast().CreateComputeShader((char*)file_name, func_name, pComputeShader,pClassLinkage,use_class))
 		{
 			CS = pComputeShader;
 			ShaderList_Add < ID3D11ComputeShader*>(m_pComputeShaderMap, CS, file_name, func_name);
+			ShaderList_Add<ID3D11ClassLinkage*>(m_pComputeLinkMap, pClassLinkage, file_name, func_name);
 			return true;
 		}
 		else

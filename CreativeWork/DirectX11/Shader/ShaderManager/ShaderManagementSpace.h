@@ -54,4 +54,5 @@ namespace NShaderManager
 	typedef std::map<KeyStruct, ID3D11HullShader*> HullShaderMap;
 	typedef std::map<KeyStruct, ID3D11DomainShader*> DomainShaderMap;
 	typedef std::map<KeyStruct, ID3D11ComputeShader*> ComputeShaderMap;
+	typedef std::map<KeyStruct, ID3D11ClassLinkage*> ClassLinkageMap;
 }

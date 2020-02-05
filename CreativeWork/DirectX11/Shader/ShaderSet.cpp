@@ -47,15 +47,17 @@ ID3D11DomainShader* CShaderSet::GetDomainShader(UINT index)
 }
 
 
-bool CShaderSet::CreateVertexShader(const char* file_name, const char* func_name)
+bool CShaderSet::CreateVertexShader(const char* file_name, const char* func_name,bool use_class)
 {
 	ID3D11VertexShader* vertex_shader;
 	ID3D11InputLayout* input_layout;
-	if (CShaderManager::GetInstance().GetVertexShader(file_name, func_name, vertex_shader, input_layout))
+	ID3D11ClassLinkage* pClassLinkage;
+	if (CShaderManager::GetInstance().GetVertexShader(file_name, func_name, vertex_shader, input_layout,pClassLinkage,use_class))
 	{
 		//Created.
 		m_vVertexShader.push_back(vertex_shader);
 		m_vInputLayout.push_back(input_layout);
+		m_vVertexLink.push_back(pClassLinkage);
 		return true;
 	}
 	else
@@ -65,10 +67,11 @@ bool CShaderSet::CreateVertexShader(const char* file_name, const char* func_name
 	}
 }
 
-bool CShaderSet::CreatePixelShader(const char* file_name, const char* func_name)
+bool CShaderSet::CreatePixelShader(const char* file_name, const char* func_name,bool use_class)
 {
 	ID3D11PixelShader* pixel_shader;
-	if (CShaderManager::GetInstance().GetPixelShader(file_name, func_name, pixel_shader))
+	ID3D11ClassLinkage* pClassLinkage;
+	if (CShaderManager::GetInstance().GetPixelShader(file_name, func_name, pixel_shader,pClassLinkage,use_class))
 	{
 		//Created.
 		m_vPixelShader.push_back(pixel_shader);
@@ -81,10 +84,11 @@ bool CShaderSet::CreatePixelShader(const char* file_name, const char* func_name)
 	}
 }
 
-bool CShaderSet::CreateGeometryShader(const char* file_name, const char* func_name)
+bool CShaderSet::CreateGeometryShader(const char* file_name, const char* func_name,bool use_class)
 {
 	ID3D11GeometryShader* geometry_shader;
-	if (CShaderManager::GetInstance().GetGeometryShader(file_name, func_name, geometry_shader))
+	ID3D11ClassLinkage* pClassLinkage;
+	if (CShaderManager::GetInstance().GetGeometryShader(file_name, func_name, geometry_shader,pClassLinkage,use_class))
 	{
 		//Created.
 		m_vGeometryShader.push_back(geometry_shader);
@@ -97,10 +101,11 @@ bool CShaderSet::CreateGeometryShader(const char* file_name, const char* func_na
 	}
 }
 
-bool CShaderSet::CreateHullShader(const char* file_name, const char* func_name)
+bool CShaderSet::CreateHullShader(const char* file_name, const char* func_name,bool use_class)
 {
 	ID3D11HullShader* hull_shader;
-	if (CShaderManager::GetInstance().GetHullShader(file_name, func_name, hull_shader))
+	ID3D11ClassLinkage* pClassLinkage;
+	if (CShaderManager::GetInstance().GetHullShader(file_name, func_name, hull_shader,pClassLinkage, use_class))
 	{
 		//Created.
 		m_vHullShader.push_back(hull_shader);
@@ -113,10 +118,11 @@ bool CShaderSet::CreateHullShader(const char* file_name, const char* func_name)
 	}
 }
 
-bool CShaderSet::CreateDomainShader(const char* file_name, const char* func_name)
+bool CShaderSet::CreateDomainShader(const char* file_name, const char* func_name,bool use_class)
 {
 	ID3D11DomainShader* domain_shader;
-	if (CShaderManager::GetInstance().GetDomainShader( file_name, func_name, domain_shader))
+	ID3D11ClassLinkage* pClassLinkage;
+	if (CShaderManager::GetInstance().GetDomainShader( file_name, func_name, domain_shader, pClassLinkage, use_class))
 	{
 		//Created.
 		m_vDomainShader.push_back(domain_shader);

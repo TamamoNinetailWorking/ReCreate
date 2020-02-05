@@ -15,13 +15,25 @@ private:
 	ID3D11DeviceContext* m_pDeviceContext;
 
 	/* ShaderSet */
+	//Vertex
 	NShaderManager::VertexShaderMap m_pVertexShaderMap;
+	NShaderManager::ClassLinkageMap m_pVertexLinkMap;
 	NShaderManager::InputLayoutMap m_pInputLayoutMap;
+	//Pixel
 	NShaderManager::PixelShaderMap m_pPixelShaderMap;
+	NShaderManager::ClassLinkageMap m_pPixelLinkMap;
+	//Geometry
 	NShaderManager::GeometryShaderMap m_pGeometryShaderMap;
+	NShaderManager::ClassLinkageMap m_pGeometryLinkMap;
+	//Hull
 	NShaderManager::HullShaderMap m_pHullShaderMap;
+	NShaderManager::ClassLinkageMap m_pHullLinkMap;
+	//Domain
 	NShaderManager::DomainShaderMap m_pDomainShaderMap;
+	NShaderManager::ClassLinkageMap m_pDomainLinkMap;
+	//Compute
 	NShaderManager::ComputeShaderMap m_pComputeShaderMap;
+	NShaderManager::ClassLinkageMap m_pComputeLinkMap;
 
 	void AllClear();
 
@@ -64,32 +76,44 @@ public:
 		const char* file_name,
 		const char* func_name,
 		ID3D11VertexShader*& pVertexShader,
-		ID3D11InputLayout*& pInputLayout);
+		ID3D11InputLayout*& pInputLayout,
+		ID3D11ClassLinkage*& pClassLinkage,
+		bool use_class);
 
 	bool GetPixelShader(
 		const char* file_name,
 		const char* func_name,
-		ID3D11PixelShader*& pPixelShader);
+		ID3D11PixelShader*& pPixelShader,
+		ID3D11ClassLinkage*& pClassLinkage,
+		bool use_class);
 
 	bool GetGeometryShader(
 		const char* file_name,
 		const char* func_name,
-		ID3D11GeometryShader*& pGeometryShader);
+		ID3D11GeometryShader*& pGeometryShader,
+		ID3D11ClassLinkage*& pClassLinkage,
+		bool use_class);
 
 	bool GetHullShader(
 		const char* file_name,
 		const char* func_name,
-		ID3D11HullShader*& pHullShader);
+		ID3D11HullShader*& pHullShader,
+		ID3D11ClassLinkage*& pClassLinkage,
+		bool use_class);
 
 	bool GetDomainShader(
 		const char* file_name,
 		const char* func_name,
-		ID3D11DomainShader*& pDomainShader);
+		ID3D11DomainShader*& pDomainShader,
+		ID3D11ClassLinkage*& pClassLinkage,
+		bool use_class);
 
 	bool GetComputeShader(
 		const char* file_name,
 		const char* func_name,
-		ID3D11ComputeShader*& pComputeShader);
+		ID3D11ComputeShader*& pComputeShader,
+		ID3D11ClassLinkage*& pClassLinkage,
+		bool use_class);
 
 };
 
