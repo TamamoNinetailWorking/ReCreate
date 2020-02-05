@@ -129,11 +129,29 @@
     <ClCompile Include="System\Entry\Entry.cpp" />
     <ClCompile Include="System\Entry\Procedure.cpp" />
     <ClCompile Include="System\PrimaryMain.cpp" />
+    <ClCompile Include="TestSource\TestSource1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component\Base\UserInterface\UserInterface.h" />
     <ClInclude Include="Component\RaymarchComponent\RaymarchComponent.h" />
     <ClInclude Include="Object\Raymarch\Raymarch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HLSL\Base\BaseHeader.hlsli" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="HLSL\Base\BasePixelShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="HLSL\Base\BaseVertexShader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

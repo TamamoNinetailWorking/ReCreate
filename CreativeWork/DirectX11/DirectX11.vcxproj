@@ -124,6 +124,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="D3DObject\Component\2DDrawer.h" />
+    <ClInclude Include="D3DObject\Component\3DDrawer.h" />
+    <ClInclude Include="D3DObject\Component\D3DDrawer.h" />
     <ClInclude Include="DirectX11\DepthStencil\DepthStencil.h" />
     <ClInclude Include="DirectX11\PrimaryDevice\DirectX11.h" />
     <ClInclude Include="DirectX11\RenderingState\AlphaBlendState\AlphaBlendState.h" />
@@ -152,6 +155,7 @@
     <None Include="DirectXTex\DirectXTex.inl" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="D3DObject\Component\D3DDrawer.cpp" />
     <ClCompile Include="DirectX11\DepthStencil\DepthStencil.cpp" />
     <ClCompile Include="DirectX11\PrimaryDevice\DirectX11Main.cpp" />
     <ClCompile Include="DirectX11\RenderingState\AlphaBlendState\AlphaBlendState.cpp" />

@@ -4,7 +4,7 @@
 
 class CRaymarch : public CObject
 {
-private:
+protected:
 
 	void init_component();
 

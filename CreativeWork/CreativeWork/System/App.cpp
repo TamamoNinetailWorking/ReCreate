@@ -3,6 +3,8 @@
 
 void PrimaryMain();
 
+void TestMain();
+
 void App()
 {
 
@@ -12,7 +14,8 @@ void App()
 		GetFPSManager().UpdateTime();
 		GetFPSManager().DrawWindowBezel();
 
-		PrimaryMain();
+		//PrimaryMain();
+		TestMain();
 	}
 	GetFPSManager().ReadyTime();
 	GetFPSManager().Measurement_FPS();

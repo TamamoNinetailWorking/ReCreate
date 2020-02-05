@@ -37,6 +37,12 @@
     <Filter Include="Component\Base\UserInterface">
       <UniqueIdentifier>{e5ca9d0d-4cf8-44bb-bf03-1571cbec9f5c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="HLSL">
+      <UniqueIdentifier>{29e4e560-b52d-4bd0-876e-3ed5eed904f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HLSL\Base">
+      <UniqueIdentifier>{05aeaa37-4a96-4048-adfd-7c7193e01b3f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="System\App.cpp">
@@ -60,6 +66,9 @@
     <ClCompile Include="Component\Base\UserInterface\UserInterface.cpp">
       <Filter>Component\Base\UserInterface</Filter>
     </ClCompile>
+    <ClCompile Include="TestSource\TestSource1.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object\Raymarch\Raymarch.h">
@@ -71,5 +80,18 @@
     <ClInclude Include="Component\Base\UserInterface\UserInterface.h">
       <Filter>Component\Base\UserInterface</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HLSL\Base\BaseHeader.hlsli">
+      <Filter>HLSL\Base</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="HLSL\Base\BaseVertexShader.hlsl">
+      <Filter>HLSL\Base</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Base\BasePixelShader.hlsl">
+      <Filter>HLSL\Base</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

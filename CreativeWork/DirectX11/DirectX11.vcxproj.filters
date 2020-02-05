@@ -53,6 +53,15 @@
     <Filter Include="Shader\ShaderManager">
       <UniqueIdentifier>{57d2d7ca-e2b3-489d-82f3-18116f473420}</UniqueIdentifier>
     </Filter>
+    <Filter Include="D3DObject">
+      <UniqueIdentifier>{b29af732-9d7b-4c2f-bb96-5bf49040b9bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3DObject\Component">
+      <UniqueIdentifier>{51da18c6-db67-483c-bfa5-8bb9b9a75de5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3DObject\Component\D3DDrawer">
+      <UniqueIdentifier>{e0cd93be-06ff-4e8b-8f97-4ee0bd5b99ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectXTex\DirectXTex.h">
@@ -124,6 +133,15 @@
     <ClInclude Include="Shader\ShaderSet.h">
       <Filter>Shader</Filter>
     </ClInclude>
+    <ClInclude Include="D3DObject\Component\2DDrawer.h">
+      <Filter>D3DObject\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DObject\Component\3DDrawer.h">
+      <Filter>D3DObject\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DObject\Component\D3DDrawer.h">
+      <Filter>D3DObject\Component\D3DDrawer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectXTex\DirectXTex.inl">
@@ -187,6 +205,9 @@
     </ClCompile>
     <ClCompile Include="Shader\ShaderSet.cpp">
       <Filter>Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="D3DObject\Component\D3DDrawer.cpp">
+      <Filter>D3DObject\Component\D3DDrawer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
