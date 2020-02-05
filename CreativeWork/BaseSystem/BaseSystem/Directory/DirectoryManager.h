@@ -25,7 +25,7 @@ public:
 
 };
 
-CDirectoryManager& GetDirectoryManager()
+inline CDirectoryManager& GetDirectoryManager()
 {
 	return CDirectoryManager::GetInstance();
 }
