@@ -27,17 +27,17 @@ protected:
 		m_pVertexBuffer = nullptr;
 		m_pIndexBuffer = nullptr;
 
-		m_pMaterialContainer = nullptr;
+		//m_pMaterialContainer = nullptr;
 		m_pMaterialIndexBuffer = nullptr;
 
-		m_pBufferContainer = nullptr;
-		m_pSRVContainer = nullptr;
+		//m_pBufferContainer = nullptr;
+		//m_pSRVContainer = nullptr;
 	}
 
 public:
 
 	CDrawer() { construction(); }
-	virtual ~CDrawer3D() { Exit(); };
+	virtual ~CDrawer() { Exit(); };
 
 	virtual void Exit()
 	{

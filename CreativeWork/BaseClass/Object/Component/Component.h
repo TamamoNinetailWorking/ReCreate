@@ -1,6 +1,6 @@
 #pragma once
 
-class Object;
+class CObject;
 
 class CComponent
 {
@@ -9,7 +9,7 @@ public:
 	CComponent() {}
 	virtual ~CComponent() {}
 
-	Object* m_pParent;
+	CObject* m_pParent;
 
 	virtual void Start() {}
 	virtual void Update() {}

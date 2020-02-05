@@ -29,8 +29,32 @@ public:
 	virtual void DrawUpdate();
 	virtual void Draw();
 
-	template <class T>T*& GetComponent();
-	template <class T>T*& AddComponent();
+	template <class T>
+	T*& GetComponent()
+	{
+		for (auto com : m_pComponentList)
+		{
+			T* component = dynamic_cast<T*>(com);
+			if (component != nullptr)
+			{
+				return component;
+			}
+		}
+		return nullptr;
+	}
+
+	template <class T>
+	T*& AddComponent()
+	{
+		T* component = new T();
+		component->m_pParent = this;
+
+		m_pComponentList.push_back(component);
+
+		component->Start();
+
+		return component;
+	}
 
 	std::string GetObjectName();
 };

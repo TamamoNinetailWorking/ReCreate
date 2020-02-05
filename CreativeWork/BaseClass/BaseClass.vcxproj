@@ -128,6 +128,7 @@
     <ClInclude Include="Object\ObjectManager\ObjectManager.h" />
     <ClInclude Include="Singleton\Singleton.h" />
     <ClInclude Include="Utility\EnderUtility.h" />
+    <ClInclude Include="Utility\Utility.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Object\Base\Object.cpp" />

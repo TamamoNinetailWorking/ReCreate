@@ -22,6 +22,9 @@
     <Filter Include="Object\DrawComponent">
       <UniqueIdentifier>{8ab17eb1-d6b1-42d7-b192-c77128e9a79d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="HLSL">
+      <UniqueIdentifier>{aaf69b35-7449-4cd2-8b81-e7cd94d2af0c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singleton\Singleton.h">
@@ -41,6 +44,9 @@
     </ClInclude>
     <ClInclude Include="Object\DrawComponent\DrawComponent.h">
       <Filter>Object\DrawComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Utility.h">
+      <Filter>Utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
